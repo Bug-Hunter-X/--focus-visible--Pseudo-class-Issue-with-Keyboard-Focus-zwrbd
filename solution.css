@@ -1,0 +1,14 @@
+The solution addresses the issue by ensuring that the `:focus-visible` pseudo-class style is correctly applied and that no other CSS rules interfere with its behavior.  For example, if a `:focus` or other general selector is overriding the `:focus-visible` rule, the outline might not be displayed correctly. The solution ensures the `:focus-visible` rule is specific enough to have precedence over any other conflicting styles. If other elements are interfering, it should ensure that other interfering CSS is addressed.
+
+```css
+button {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+button:focus-visible {
+  outline: 2px solid blue !important;
+}
+```
+
+By adding `!important` the `:focus-visible` rule takes precedence over any other style declarations.  However, using !important is generally discouraged.  Consider whether other CSS rules are in conflict and refactor your CSS to avoid this.
