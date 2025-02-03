@@ -1,0 +1,12 @@
+The following CSS code snippet demonstrates an issue where the expected behavior of the `:focus-visible` pseudo-class does not occur as anticipated.  The button element does not display the default focus outline when using a keyboard. This is unexpected because the `:focus-visible` pseudo-class should only apply styles when the element receives focus using the keyboard and not a mouse click.
+
+```css
+button {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+button:focus-visible {
+  outline: 2px solid blue;
+}
+```
